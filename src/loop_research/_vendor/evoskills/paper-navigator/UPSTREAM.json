@@ -1,0 +1,42 @@
+{
+  "repository": "https://github.com/EvoScientist/EvoSkills",
+  "commit": "85ad685d1df5ed1d7fe641564d04bb8a3dec8f28",
+  "files": [
+    "skills/paper-navigator/SKILL.md",
+    "skills/paper-navigator/assets/paper-summary-template.md",
+    "skills/paper-navigator/references/api-reference.md",
+    "skills/paper-navigator/references/arxiv-categories.md",
+    "skills/paper-navigator/references/disambiguation.md",
+    "skills/paper-navigator/references/env-vars.md",
+    "skills/paper-navigator/references/iterative-collection.md",
+    "skills/paper-navigator/references/output-formats.md",
+    "skills/paper-navigator/references/reading-strategy.md",
+    "skills/paper-navigator/references/search-principles.md",
+    "skills/paper-navigator/requirements.txt",
+    "skills/paper-navigator/scripts/arxiv_monitor.py",
+    "skills/paper-navigator/scripts/author_search.py",
+    "skills/paper-navigator/scripts/citation_traverse.py",
+    "skills/paper-navigator/scripts/dataset_search.py",
+    "skills/paper-navigator/scripts/deepxiv_client.py",
+    "skills/paper-navigator/scripts/download_paper.py",
+    "skills/paper-navigator/scripts/fetch_paper.py",
+    "skills/paper-navigator/scripts/find_code.py",
+    "skills/paper-navigator/scripts/github_search.py",
+    "skills/paper-navigator/scripts/library_search.py",
+    "skills/paper-navigator/scripts/literature_report.py",
+    "skills/paper-navigator/scripts/match_paper_by_title.py",
+    "skills/paper-navigator/scripts/recommend.py",
+    "skills/paper-navigator/scripts/saturation.py",
+    "skills/paper-navigator/scripts/scholar_search.py",
+    "skills/paper-navigator/scripts/snippet_search.py",
+    "skills/paper-navigator/scripts/sota.py",
+    "skills/paper-navigator/scripts/trending.py",
+    "skills/paper-navigator/scripts/utils.py"
+  ],
+  "adaptations": [
+    "fetch_paper --skip-metadata: reuse OpenAlex metadata without repeating S2 lookup; no Agent runtime added"
+  ],
+  "adapted_sha256": {
+    "scripts/fetch_paper.py": "d6ff5fe802b303bf0bec7cef150106bc06560644ce1c602025ca83a1a12973de"
+  }
+}

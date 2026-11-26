@@ -1,0 +1,1291 @@
+{
+  "title": "LOOP Research local acceptance checklist",
+  "revision": 53,
+  "updated": "2026-11-25",
+  "features": [
+    {
+      "id": "F01",
+      "category": "项目与交互",
+      "title": "项目需求模板",
+      "section": "M7",
+      "criterion": "缺少任一必需项时询问补齐并阻止启动",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §7：使用流程",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_7-%E7%9C%9F%E5%AE%9E%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C-%E4%BB%8E%E4%B8%80%E5%8F%A5%E9%9C%80%E6%B1%82%E5%88%B0%E8%87%AA%E4%B8%BB%E8%BF%AD%E4%BB%A3"
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "category": "项目与交互",
+      "title": "业务知识冷启动",
+      "section": "M4.1",
+      "criterion": "首轮假设可追溯到已确认的业务资料",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §4.1：业务知识",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_4-1-%E4%B8%9A%E5%8A%A1%E7%9F%A5%E8%AF%86%E5%BA%93-%E7%B3%BB%E7%BB%9F%E7%9A%84-%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD"
+        }
+      ]
+    },
+    {
+      "id": "F03",
+      "category": "项目与交互",
+      "title": "接收用户填写的文档链接",
+      "section": "M7",
+      "criterion": "修改云端模板后，启动时能读取对应版本",
+      "status": "excluded",
+      "sources": [
+        {
+          "title": "美团原文 §7：使用流程",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_7-%E7%9C%9F%E5%AE%9E%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C-%E4%BB%8E%E4%B8%80%E5%8F%A5%E9%9C%80%E6%B1%82%E5%88%B0%E8%87%AA%E4%B8%BB%E8%BF%AD%E4%BB%A3"
+        }
+      ]
+    },
+    {
+      "id": "F04",
+      "category": "项目与交互",
+      "title": "单指标和多目标业务评价",
+      "section": "M7 / M8.1",
+      "criterion": "所有必达目标均满足才宣告达标，不能只优化一个综合分",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §7：使用流程",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_7-%E7%9C%9F%E5%AE%9E%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C-%E4%BB%8E%E4%B8%80%E5%8F%A5%E9%9C%80%E6%B1%82%E5%88%B0%E8%87%AA%E4%B8%BB%E8%BF%AD%E4%BB%A3"
+        },
+        {
+          "title": "美团原文 §8.1：多目标",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_8-1-%E6%95%88%E6%9E%9C-%E6%95%88%E7%8E%87%E5%A2%9E%E7%9B%8A%E6%9D%A5%E8%87%AA%E6%9E%B6%E6%9E%84%E6%9C%AC%E8%BA%AB"
+        }
+      ]
+    },
+    {
+      "id": "F05",
+      "category": "项目与交互",
+      "title": "迭代上限与达标停止",
+      "section": "M7 / G1",
+      "criterion": "达标或有效任务上限触发后不再创建新任务",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §7：使用流程",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_7-%E7%9C%9F%E5%AE%9E%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C-%E4%BB%8E%E4%B8%80%E5%8F%A5%E9%9C%80%E6%B1%82%E5%88%B0%E8%87%AA%E4%B8%BB%E8%BF%AD%E4%BB%A3"
+        },
+        {
+          "title": "美团 V3 全景架构图",
+          "url": "https://p0.meituan.net/meituantechblog/b6b35b2776b3eeddc82e1c211ee3bd792215253.png"
+        }
+      ]
+    },
+    {
+      "id": "F06",
+      "category": "项目与交互",
+      "title": "查询实时进度",
+      "section": "M7",
+      "criterion": "查询结果与任务清单一致，无需唤醒训练 worker",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §7：使用流程",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_7-%E7%9C%9F%E5%AE%9E%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C-%E4%BB%8E%E4%B8%80%E5%8F%A5%E9%9C%80%E6%B1%82%E5%88%B0%E8%87%AA%E4%B8%BB%E8%BF%AD%E4%BB%A3"
+        }
+      ]
+    },
+    {
+      "id": "F07",
+      "category": "项目与交互",
+      "title": "随时打断自动探索",
+      "section": "M7",
+      "criterion": "收到打断后重复触发不会重新提交；在途任务可追踪",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §7：使用流程",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_7-%E7%9C%9F%E5%AE%9E%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C-%E4%BB%8E%E4%B8%80%E5%8F%A5%E9%9C%80%E6%B1%82%E5%88%B0%E8%87%AA%E4%B8%BB%E8%BF%AD%E4%BB%A3"
+        }
+      ]
+    },
+    {
+      "id": "F08",
+      "category": "项目与交互",
+      "title": "交互入口与研究内核解耦",
+      "section": "M6",
+      "criterion": "替换一个入口不丢进度、不改变决策规则",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §6：基座与入口解耦",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_6-%E4%B8%8E-agent-%E5%9F%BA%E5%BA%A7%E8%A7%A3%E8%80%A6-%E4%BA%AB%E5%8F%97-agent-%E7%BA%A2%E5%88%A9"
+        }
+      ]
+    },
+    {
+      "id": "F09",
+      "category": "V1 串行能力",
+      "title": "周期触发与脚本入口",
+      "section": "M3.1",
+      "criterion": "一个触发完成有限工作后退出",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.1：V1",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-1-v1-%E6%8A%8A-loop-%E6%90%AC%E4%B8%8A%E4%BC%81%E4%B8%9A%E4%BA%91%E7%AB%AF"
+        }
+      ]
+    },
+    {
+      "id": "F10",
+      "category": "V1 串行能力",
+      "title": "检查训练运行状态",
+      "section": "M3.1",
+      "criterion": "排队、运行、成功、失败均可识别",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.1：V1",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-1-v1-%E6%8A%8A-loop-%E6%90%AC%E4%B8%8A%E4%BC%81%E4%B8%9A%E4%BA%91%E7%AB%AF"
+        }
+      ]
+    },
+    {
+      "id": "F11",
+      "category": "V1 串行能力",
+      "title": "提取日志和业务指标",
+      "section": "M3.1",
+      "criterion": "缺失字段不能被转换为零或成功",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.1：V1",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-1-v1-%E6%8A%8A-loop-%E6%90%AC%E4%B8%8A%E4%BC%81%E4%B8%9A%E4%BA%91%E7%AB%AF"
+        }
+      ]
+    },
+    {
+      "id": "F12",
+      "category": "V1 串行能力",
+      "title": "分析并与上一轮比较",
+      "section": "M3.1",
+      "criterion": "分析引用真实 run 和可复核数值",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.1：V1",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-1-v1-%E6%8A%8A-loop-%E6%90%AC%E4%B8%8A%E4%BC%81%E4%B8%9A%E4%BA%91%E7%AB%AF"
+        }
+      ]
+    },
+    {
+      "id": "F13",
+      "category": "V1 串行能力",
+      "title": "自主修改训练代码",
+      "section": "M3.1",
+      "criterion": "生成可审阅 diff，禁止修改冻结评测器",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.1：V1",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-1-v1-%E6%8A%8A-loop-%E6%90%AC%E4%B8%8A%E4%BC%81%E4%B8%9A%E4%BA%91%E7%AB%AF"
+        }
+      ]
+    },
+    {
+      "id": "F14",
+      "category": "V1 串行能力",
+      "title": "提交训练",
+      "section": "M3.1 / G1",
+      "criterion": "任务能对应到唯一代码提交及实验 ID",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.1：V1",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-1-v1-%E6%8A%8A-loop-%E6%90%AC%E4%B8%8A%E4%BC%81%E4%B8%9A%E4%BA%91%E7%AB%AF"
+        },
+        {
+          "title": "美团 V3 全景架构图",
+          "url": "https://p0.meituan.net/meituantechblog/b6b35b2776b3eeddc82e1c211ee3bd792215253.png"
+        }
+      ]
+    },
+    {
+      "id": "F15",
+      "category": "V1 串行能力",
+      "title": "报告归档到云端协作文档",
+      "section": "M3.1",
+      "criterion": "云端目录可打开报告、共同编辑，证据链接有效",
+      "status": "excluded",
+      "sources": [
+        {
+          "title": "美团原文 §3.1：V1",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-1-v1-%E6%8A%8A-loop-%E6%90%AC%E4%B8%8A%E4%BC%81%E4%B8%9A%E4%BA%91%E7%AB%AF"
+        }
+      ]
+    },
+    {
+      "id": "F16",
+      "category": "V1 串行能力",
+      "title": "可审计的保留、回退和历史最优",
+      "section": "M1 / G2",
+      "criterion": "退化候选不覆盖最优，任意候选可恢复且失败证据保留",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §1：背景与原型",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_1-%E8%83%8C%E6%99%AF-%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E6%97%B6%E9%97%B4%E9%83%BD%E5%8E%BB%E5%93%AA%E4%BA%86"
+        },
+        {
+          "title": "美团主 Agent 与记忆图",
+          "url": "https://p0.meituan.net/meituantechblog/9a7bc37921bcf1ac733d8a21d6484d062463066.png"
+        }
+      ]
+    },
+    {
+      "id": "F17",
+      "category": "V2 状态与异步",
+      "title": "每次触发使用新会话",
+      "section": "M3.2 / M6",
+      "criterion": "删除旧聊天记录仍能继续研究",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.2：V2",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-2-v2-%E5%BC%82%E6%AD%A5%E5%BE%AA%E7%8E%AF%E4%B8%8E%E6%98%BE%E5%BC%8F%E7%8A%B6%E6%80%81%E6%9C%BA"
+        },
+        {
+          "title": "美团原文 §6：基座与入口解耦",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_6-%E4%B8%8E-agent-%E5%9F%BA%E5%BA%A7%E8%A7%A3%E8%80%A6-%E4%BA%AB%E5%8F%97-agent-%E7%BA%A2%E5%88%A9"
+        }
+      ]
+    },
+    {
+      "id": "F18",
+      "category": "V2 状态与异步",
+      "title": "最小 JSON 状态持久化",
+      "section": "M3.2",
+      "criterion": "重启后从 JSON 重建 phase、任务、最优和预算",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.2：V2",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-2-v2-%E5%BC%82%E6%AD%A5%E5%BE%AA%E7%8E%AF%E4%B8%8E%E6%98%BE%E5%BC%8F%E7%8A%B6%E6%80%81%E6%9C%BA"
+        }
+      ]
+    },
+    {
+      "id": "F19",
+      "category": "V2 状态与异步",
+      "title": "Monitor 与 Iterator 分工",
+      "section": "M3.2",
+      "criterion": "同一控制 tick 不会同时执行两个互斥角色",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.2：V2",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-2-v2-%E5%BC%82%E6%AD%A5%E5%BE%AA%E7%8E%AF%E4%B8%8E%E6%98%BE%E5%BC%8F%E7%8A%B6%E6%80%81%E6%9C%BA"
+        }
+      ]
+    },
+    {
+      "id": "F20",
+      "category": "V2 状态与异步",
+      "title": "phase 互斥路由与并发锁",
+      "section": "M3.2 / G3",
+      "criterion": "并发触发不会生成两批相同实验，异常退出后可恢复锁与状态",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.2：V2",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-2-v2-%E5%BC%82%E6%AD%A5%E5%BE%AA%E7%8E%AF%E4%B8%8E%E6%98%BE%E5%BC%8F%E7%8A%B6%E6%80%81%E6%9C%BA"
+        },
+        {
+          "title": "美团版本维度与状态机读写图",
+          "url": "https://p0.meituan.net/meituantechblog/f96c07e4011d02bd7812f31d56cd3f08844163.png"
+        }
+      ]
+    },
+    {
+      "id": "F21",
+      "category": "V2 状态与异步",
+      "title": "长训练异步提交后退出",
+      "section": "M3.2 / M6",
+      "criterion": "训练数小时期间无 Agent 会话空等",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.2：V2",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-2-v2-%E5%BC%82%E6%AD%A5%E5%BE%AA%E7%8E%AF%E4%B8%8E%E6%98%BE%E5%BC%8F%E7%8A%B6%E6%80%81%E6%9C%BA"
+        },
+        {
+          "title": "美团原文 §6：基座与入口解耦",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_6-%E4%B8%8E-agent-%E5%9F%BA%E5%BA%A7%E8%A7%A3%E8%80%A6-%E4%BA%AB%E5%8F%97-agent-%E7%BA%A2%E5%88%A9"
+        }
+      ]
+    },
+    {
+      "id": "F22",
+      "category": "V2 状态与异步",
+      "title": "后续触发查询结果并恢复",
+      "section": "M3.2",
+      "criterion": "训练在两次触发之间完成也不会漏处理",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.2：V2",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-2-v2-%E5%BC%82%E6%AD%A5%E5%BE%AA%E7%8E%AF%E4%B8%8E%E6%98%BE%E5%BC%8F%E7%8A%B6%E6%80%81%E6%9C%BA"
+        }
+      ]
+    },
+    {
+      "id": "F23",
+      "category": "V2 状态与异步",
+      "title": "定时、手动、事件驱动唤起",
+      "section": "M6",
+      "criterion": "同一完成事件重复发送只生效一次",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §6：基座与入口解耦",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_6-%E4%B8%8E-agent-%E5%9F%BA%E5%BA%A7%E8%A7%A3%E8%80%A6-%E4%BA%AB%E5%8F%97-agent-%E7%BA%A2%E5%88%A9"
+        }
+      ]
+    },
+    {
+      "id": "F24",
+      "category": "V2 状态与异步",
+      "title": "决策信息压缩与按需加载",
+      "section": "M3.2",
+      "criterion": "长周期运行中决策状态大小受控，原件仍可定位",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.2：V2",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-2-v2-%E5%BC%82%E6%AD%A5%E5%BE%AA%E7%8E%AF%E4%B8%8E%E6%98%BE%E5%BC%8F%E7%8A%B6%E6%80%81%E6%9C%BA"
+        }
+      ]
+    },
+    {
+      "id": "F25",
+      "category": "V3 图探索",
+      "title": "主 Agent 分解 3–4 个差异化假设",
+      "section": "M3.3",
+      "criterion": "每个分支有独立可检验的问题和预期证据",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.3：V3",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-3-v3-cyclicgraph-engine-%E5%9B%BE%E6%8E%A2%E7%B4%A2%E6%9E%B6%E6%9E%84"
+        }
+      ]
+    },
+    {
+      "id": "F26",
+      "category": "V3 图探索",
+      "title": "互斥／正交方向约束",
+      "section": "M3.3 / M3.4",
+      "criterion": "重复配置被代码拦截，语义重叠被退回重规划",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.3：V3",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-3-v3-cyclicgraph-engine-%E5%9B%BE%E6%8E%A2%E7%B4%A2%E6%9E%B6%E6%9E%84"
+        },
+        {
+          "title": "美团原文 §3.4：探索策略",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-4-%E5%9B%BE%E6%9E%B6%E6%9E%84%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%8E%A2%E7%B4%A2%E6%95%88%E7%8E%87%E8%B7%83%E5%8D%87"
+        }
+      ]
+    },
+    {
+      "id": "F27",
+      "category": "V3 图探索",
+      "title": "并行派发并独立验证",
+      "section": "M3.3",
+      "criterion": "一批三个方向可独立提交并异步追踪",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.3：V3",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-3-v3-cyclicgraph-engine-%E5%9B%BE%E6%8E%A2%E7%B4%A2%E6%9E%B6%E6%9E%84"
+        }
+      ]
+    },
+    {
+      "id": "F28",
+      "category": "V3 图探索",
+      "title": "子 Agent 上下文互相隔离",
+      "section": "M3.3 / M5.2",
+      "criterion": "分支 A 在本批结束前读不到 B 的中间结论",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.3：V3",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-3-v3-cyclicgraph-engine-%E5%9B%BE%E6%8E%A2%E7%B4%A2%E6%9E%B6%E6%9E%84"
+        },
+        {
+          "title": "美团原文 §5.2：隔离与交叉验证",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-2-%E4%B8%8A%E4%B8%8B%E6%96%87%E9%9A%94%E7%A6%BB%E4%B8%8E%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81"
+        }
+      ]
+    },
+    {
+      "id": "F29",
+      "category": "V3 图探索",
+      "title": "并行代码和工作目录隔离",
+      "section": "M3.3 → D1",
+      "criterion": "两个候选修改同一文件时互不覆盖",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.3：V3",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-3-v3-cyclicgraph-engine-%E5%9B%BE%E6%8E%A2%E7%B4%A2%E6%9E%B6%E6%9E%84"
+        }
+      ]
+    },
+    {
+      "id": "F30",
+      "category": "V3 图探索",
+      "title": "全批结果汇总 Converge",
+      "section": "M3.3 / G1",
+      "criterion": "不能把一个先完成分支当成本批最终结论",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.3：V3",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-3-v3-cyclicgraph-engine-%E5%9B%BE%E6%8E%A2%E7%B4%A2%E6%9E%B6%E6%9E%84"
+        },
+        {
+          "title": "美团 V3 全景架构图",
+          "url": "https://p0.meituan.net/meituantechblog/b6b35b2776b3eeddc82e1c211ee3bd792215253.png"
+        }
+      ]
+    },
+    {
+      "id": "F31",
+      "category": "V3 图探索",
+      "title": "提炼洞察并更新假设",
+      "section": "M3.3 / G2",
+      "criterion": "下一轮可解释每个方向来自哪份证据",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.3：V3",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-3-v3-cyclicgraph-engine-%E5%9B%BE%E6%8E%A2%E7%B4%A2%E6%9E%B6%E6%9E%84"
+        },
+        {
+          "title": "美团主 Agent 与记忆图",
+          "url": "https://p0.meituan.net/meituantechblog/9a7bc37921bcf1ac733d8a21d6484d062463066.png"
+        }
+      ]
+    },
+    {
+      "id": "F32",
+      "category": "V3 图探索",
+      "title": "维持、调整、组合或终止方向",
+      "section": "M3.3 / G2",
+      "criterion": "分支合并后的指标来自新的真实训练",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.3：V3",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-3-v3-cyclicgraph-engine-%E5%9B%BE%E6%8E%A2%E7%B4%A2%E6%9E%B6%E6%9E%84"
+        },
+        {
+          "title": "美团主 Agent 与记忆图",
+          "url": "https://p0.meituan.net/meituantechblog/9a7bc37921bcf1ac733d8a21d6484d062463066.png"
+        }
+      ]
+    },
+    {
+      "id": "F33",
+      "category": "V3 图探索",
+      "title": "边界探针",
+      "section": "M3.4",
+      "criterion": "能从原始结果复核某个参数范围为何被缩小",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.4：探索策略",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-4-%E5%9B%BE%E6%9E%B6%E6%9E%84%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%8E%A2%E7%B4%A2%E6%95%88%E7%8E%87%E8%B7%83%E5%8D%87"
+        }
+      ]
+    },
+    {
+      "id": "F34",
+      "category": "V3 图探索",
+      "title": "单变量控制",
+      "section": "M3.4",
+      "criterion": "越界改动被拒，确需多变量时另立协议",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §3.4：探索策略",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_3-4-%E5%9B%BE%E6%9E%B6%E6%9E%84%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%8E%A2%E7%B4%A2%E6%95%88%E7%8E%87%E8%B7%83%E5%8D%87"
+        }
+      ]
+    },
+    {
+      "id": "F35",
+      "category": "V3 图探索",
+      "title": "主动证伪前提并扩展搜索空间",
+      "section": "M8.2 / M9",
+      "criterion": "从已证伪方向切到初始候选池之外的真实实验",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §8.2：扩展搜索空间",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_8-2-%E4%B8%8E%E4%BC%A0%E7%BB%9F-automl-%E7%9A%84%E5%B7%AE%E5%BC%82"
+        },
+        {
+          "title": "美团原文 §9：可复现与审计",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_9-%E7%BB%93%E8%AF%AD-%E4%BB%8E-karpathy-%E5%87%BA%E5%8F%91-%E8%B5%B0%E5%88%B0%E6%9B%B4%E8%BF%9C%E7%9A%84%E5%9C%B0%E6%96%B9"
+        }
+      ]
+    },
+    {
+      "id": "F36",
+      "category": "论文雷达与业务知识",
+      "title": "论文雷达检索与来源筛选",
+      "section": "G1 / M4.2",
+      "criterion": "方向池每项至少能打开支撑论文，无法访问则标记证据不足",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团 V3 全景架构图",
+          "url": "https://p0.meituan.net/meituantechblog/b6b35b2776b3eeddc82e1c211ee3bd792215253.png"
+        },
+        {
+          "title": "美团原文 §4.2：渐进调研",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_4-2-%E6%B8%90%E8%BF%9B%E5%BC%8F%E8%B0%83%E7%A0%94%E6%9C%BA%E5%88%B6"
+        }
+      ]
+    },
+    {
+      "id": "F37",
+      "category": "论文雷达与业务知识",
+      "title": "初始调研建立方向池",
+      "section": "M4.1 / M4.2",
+      "criterion": "启动后有可排序、可追溯且去重的候选池",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §4.1：业务知识",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_4-1-%E4%B8%9A%E5%8A%A1%E7%9F%A5%E8%AF%86%E5%BA%93-%E7%B3%BB%E7%BB%9F%E7%9A%84-%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD"
+        },
+        {
+          "title": "美团原文 §4.2：渐进调研",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_4-2-%E6%B8%90%E8%BF%9B%E5%BC%8F%E8%B0%83%E7%A0%94%E6%9C%BA%E5%88%B6"
+        }
+      ]
+    },
+    {
+      "id": "F38",
+      "category": "论文雷达与业务知识",
+      "title": "研究中按需渐进调研",
+      "section": "M4.2",
+      "criterion": "新问题出现才检索，旧全文不反复灌入上下文",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §4.2：渐进调研",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_4-2-%E6%B8%90%E8%BF%9B%E5%BC%8F%E8%B0%83%E7%A0%94%E6%9C%BA%E5%88%B6"
+        }
+      ]
+    },
+    {
+      "id": "F39",
+      "category": "论文雷达与业务知识",
+      "title": "停滞检测和强制重新调研",
+      "section": "M4.2 / G2",
+      "criterion": "连续停滞达到条件后，必须调研并切换维度才可再提交",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §4.2：渐进调研",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_4-2-%E6%B8%90%E8%BF%9B%E5%BC%8F%E8%B0%83%E7%A0%94%E6%9C%BA%E5%88%B6"
+        },
+        {
+          "title": "美团主 Agent 与记忆图",
+          "url": "https://p0.meituan.net/meituantechblog/9a7bc37921bcf1ac733d8a21d6484d062463066.png"
+        }
+      ]
+    },
+    {
+      "id": "F40",
+      "category": "论文雷达与业务知识",
+      "title": "业务口径和方法基线维护",
+      "section": "M4.1 / G2",
+      "criterion": "指标比较使用同一口径，切换口径需重建基线",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §4.1：业务知识",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_4-1-%E4%B8%9A%E5%8A%A1%E7%9F%A5%E8%AF%86%E5%BA%93-%E7%B3%BB%E7%BB%9F%E7%9A%84-%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD"
+        },
+        {
+          "title": "美团主 Agent 与记忆图",
+          "url": "https://p0.meituan.net/meituantechblog/9a7bc37921bcf1ac733d8a21d6484d062463066.png"
+        }
+      ]
+    },
+    {
+      "id": "F41",
+      "category": "论文雷达与业务知识",
+      "title": "论文依据、业务依据与实验依据联合归因",
+      "section": "M5.4",
+      "criterion": "归因可定位到论文、业务材料和真实实验",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5.4：归因",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-4-%E5%BD%92%E5%9B%A0-%E8%87%AA%E8%BF%9B%E5%8C%96%E7%B3%BB%E7%BB%9F%E7%9A%84-%E6%85%A2%E5%8F%98%E9%87%8F"
+        }
+      ]
+    },
+    {
+      "id": "F42",
+      "category": "四层记忆",
+      "title": "L1 短期工作记忆",
+      "section": "G2",
+      "criterion": "本轮结束可复用结果，未审核内容不进入可信长期检索",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团主 Agent 与记忆图",
+          "url": "https://p0.meituan.net/meituantechblog/9a7bc37921bcf1ac733d8a21d6484d062463066.png"
+        }
+      ]
+    },
+    {
+      "id": "F43",
+      "category": "四层记忆",
+      "title": "L2 长期结构化经验",
+      "section": "G2",
+      "criterion": "检索时仅返回满足来源与适用范围的正式经验",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团主 Agent 与记忆图",
+          "url": "https://p0.meituan.net/meituantechblog/9a7bc37921bcf1ac733d8a21d6484d062463066.png"
+        }
+      ]
+    },
+    {
+      "id": "F44",
+      "category": "四层记忆",
+      "title": "L3 外部知识支持",
+      "section": "G2",
+      "criterion": "能按研究问题按需检索且保留来源版本",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团主 Agent 与记忆图",
+          "url": "https://p0.meituan.net/meituantechblog/9a7bc37921bcf1ac733d8a21d6484d062463066.png"
+        }
+      ]
+    },
+    {
+      "id": "F45",
+      "category": "四层记忆",
+      "title": "L4 跨轮时间线归纳",
+      "section": "G2",
+      "criterion": "能重建发现顺序，未证实规律仍标为待验证",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团主 Agent 与记忆图",
+          "url": "https://p0.meituan.net/meituantechblog/9a7bc37921bcf1ac733d8a21d6484d062463066.png"
+        }
+      ]
+    },
+    {
+      "id": "F46",
+      "category": "证据与可信执行",
+      "title": "JSON 是研究控制状态唯一事实源",
+      "section": "M5 / G1",
+      "criterion": "聊天、缓存与 JSON 冲突时从 JSON 和原始证据恢复",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5：可信度总则",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-%E5%8F%AF%E4%BF%A1%E5%BA%A6%E8%AE%BE%E8%AE%A1-%E6%97%A0%E4%BA%BA%E5%80%BC%E5%AE%88%E6%97%B6-%E5%87%AD%E4%BB%80%E4%B9%88%E7%9B%B8%E4%BF%A1%E7%B3%BB%E7%BB%9F"
+        },
+        {
+          "title": "美团 V3 全景架构图",
+          "url": "https://p0.meituan.net/meituantechblog/b6b35b2776b3eeddc82e1c211ee3bd792215253.png"
+        }
+      ]
+    },
+    {
+      "id": "F47",
+      "category": "证据与可信执行",
+      "title": "易过期句柄每次强制重读",
+      "section": "M5",
+      "criterion": "任务重试更换 ID 后只跟踪当前有效任务",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5：可信度总则",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-%E5%8F%AF%E4%BF%A1%E5%BA%A6%E8%AE%BE%E8%AE%A1-%E6%97%A0%E4%BA%BA%E5%80%BC%E5%AE%88%E6%97%B6-%E5%87%AD%E4%BB%80%E4%B9%88%E7%9B%B8%E4%BF%A1%E7%B3%BB%E7%BB%9F"
+        }
+      ]
+    },
+    {
+      "id": "F48",
+      "category": "证据与可信执行",
+      "title": "平台工具幂等",
+      "section": "M5",
+      "criterion": "同一实验重复提交请求仅关联一个有效训练，未知结果先对账",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5：可信度总则",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-%E5%8F%AF%E4%BF%A1%E5%BA%A6%E8%AE%BE%E8%AE%A1-%E6%97%A0%E4%BA%BA%E5%80%BC%E5%AE%88%E6%97%B6-%E5%87%AD%E4%BB%80%E4%B9%88%E7%9B%B8%E4%BF%A1%E7%B3%BB%E7%BB%9F"
+        }
+      ]
+    },
+    {
+      "id": "F49",
+      "category": "证据与可信执行",
+      "title": "工具结果结构化校验",
+      "section": "M5",
+      "criterion": "字段缺失、类型错误和空指标均拒绝推进",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5：可信度总则",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-%E5%8F%AF%E4%BF%A1%E5%BA%A6%E8%AE%BE%E8%AE%A1-%E6%97%A0%E4%BA%BA%E5%80%BC%E5%AE%88%E6%97%B6-%E5%87%AD%E4%BB%80%E4%B9%88%E7%9B%B8%E4%BF%A1%E7%B3%BB%E7%BB%9F"
+        }
+      ]
+    },
+    {
+      "id": "F50",
+      "category": "证据与可信执行",
+      "title": "代码故障和基础设施故障分类",
+      "section": "M5",
+      "criterion": "确定代码失败进入调整流程；基础设施故障不污染假设结论",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5：可信度总则",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-%E5%8F%AF%E4%BF%A1%E5%BA%A6%E8%AE%BE%E8%AE%A1-%E6%97%A0%E4%BA%BA%E5%80%BC%E5%AE%88%E6%97%B6-%E5%87%AD%E4%BB%80%E4%B9%88%E7%9B%B8%E4%BF%A1%E7%B3%BB%E7%BB%9F"
+        }
+      ]
+    },
+    {
+      "id": "F51",
+      "category": "证据与可信执行",
+      "title": "基础设施自动重试且不占迭代额度",
+      "section": "M5 / G1",
+      "criterion": "一次基础设施故障后重跑只计一个有效实验，成本不漏记",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5：可信度总则",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-%E5%8F%AF%E4%BF%A1%E5%BA%A6%E8%AE%BE%E8%AE%A1-%E6%97%A0%E4%BA%BA%E5%80%BC%E5%AE%88%E6%97%B6-%E5%87%AD%E4%BB%80%E4%B9%88%E7%9B%B8%E4%BF%A1%E7%B3%BB%E7%BB%9F"
+        },
+        {
+          "title": "美团 V3 全景架构图",
+          "url": "https://p0.meituan.net/meituantechblog/b6b35b2776b3eeddc82e1c211ee3bd792215253.png"
+        }
+      ]
+    },
+    {
+      "id": "F52",
+      "category": "证据与可信执行",
+      "title": "已证伪方向代码层硬拦截",
+      "section": "M5 / G1",
+      "criterion": "相同适用条件下禁止重复提交，业务条件变化需显式复核",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5：可信度总则",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-%E5%8F%AF%E4%BF%A1%E5%BA%A6%E8%AE%BE%E8%AE%A1-%E6%97%A0%E4%BA%BA%E5%80%BC%E5%AE%88%E6%97%B6-%E5%87%AD%E4%BB%80%E4%B9%88%E7%9B%B8%E4%BF%A1%E7%B3%BB%E7%BB%9F"
+        },
+        {
+          "title": "美团 V3 全景架构图",
+          "url": "https://p0.meituan.net/meituantechblog/b6b35b2776b3eeddc82e1c211ee3bd792215253.png"
+        }
+      ]
+    },
+    {
+      "id": "F53",
+      "category": "证据与可信执行",
+      "title": "原始指标、曲线和日志留存",
+      "section": "M5.1 / G1",
+      "criterion": "任意报告中的指标都能定位到原始日志与 run",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5.1：原始证据",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-1-%E5%8E%9F%E5%A7%8B%E8%AF%81%E6%8D%AE%E4%BC%98%E5%85%88-%E6%8C%87%E6%A0%87%E4%B8%8E-diff-%E9%83%BD%E8%A6%81-%E5%8E%9F%E4%BB%B6"
+        },
+        {
+          "title": "美团 V3 全景架构图",
+          "url": "https://p0.meituan.net/meituantechblog/b6b35b2776b3eeddc82e1c211ee3bd792215253.png"
+        }
+      ]
+    },
+    {
+      "id": "F54",
+      "category": "证据与可信执行",
+      "title": "原始代码 diff 留存",
+      "section": "M5.1",
+      "criterion": "无需 Agent 叙述即可重建当轮修改",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5.1：原始证据",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-1-%E5%8E%9F%E5%A7%8B%E8%AF%81%E6%8D%AE%E4%BC%98%E5%85%88-%E6%8C%87%E6%A0%87%E4%B8%8E-diff-%E9%83%BD%E8%A6%81-%E5%8E%9F%E4%BB%B6"
+        }
+      ]
+    },
+    {
+      "id": "F55",
+      "category": "证据与可信执行",
+      "title": "结论到原始证据的完整链路",
+      "section": "M5.1",
+      "criterion": "给定结论可复核对应代码和训练事实",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5.1：原始证据",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-1-%E5%8E%9F%E5%A7%8B%E8%AF%81%E6%8D%AE%E4%BC%98%E5%85%88-%E6%8C%87%E6%A0%87%E4%B8%8E-diff-%E9%83%BD%E8%A6%81-%E5%8E%9F%E4%BB%B6"
+        }
+      ]
+    },
+    {
+      "id": "F56",
+      "category": "证据与可信执行",
+      "title": "有条件的独立交叉验证",
+      "section": "M5.2",
+      "criterion": "三类触发均能派发同假设独立验证并记录原因",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5.2：隔离与交叉验证",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-2-%E4%B8%8A%E4%B8%8B%E6%96%87%E9%9A%94%E7%A6%BB%E4%B8%8E%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81"
+        }
+      ]
+    },
+    {
+      "id": "F57",
+      "category": "证据与可信执行",
+      "title": "可采用不同模型验证同一假设",
+      "section": "M5.2",
+      "criterion": "两条路径在相同实验口径下独立产生结果",
+      "status": "excluded",
+      "sources": [
+        {
+          "title": "美团原文 §5.2：隔离与交叉验证",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-2-%E4%B8%8A%E4%B8%8B%E6%96%87%E9%9A%94%E7%A6%BB%E4%B8%8E%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81"
+        }
+      ]
+    },
+    {
+      "id": "F58",
+      "category": "证据与可信执行",
+      "title": "分歧并存并转人工审查",
+      "section": "M5.2",
+      "criterion": "分歧未解决前无硬约束或正式 Skill 晋升",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5.2：隔离与交叉验证",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-2-%E4%B8%8A%E4%B8%8B%E6%96%87%E9%9A%94%E7%A6%BB%E4%B8%8E%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81"
+        }
+      ]
+    },
+    {
+      "id": "F59",
+      "category": "证据与可信执行",
+      "title": "冻结评测器防止篡改裁判",
+      "section": "M1",
+      "criterion": "候选修改评测文件或指标口径被拒绝",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §1：背景与原型",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_1-%E8%83%8C%E6%99%AF-%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E6%97%B6%E9%97%B4%E9%83%BD%E5%8E%BB%E5%93%AA%E4%BA%86"
+        }
+      ]
+    },
+    {
+      "id": "F60",
+      "category": "证据与可信执行",
+      "title": "报告质量门禁",
+      "section": "G1",
+      "criterion": "漏 diff、缺原始指标或自相矛盾报告不能成为后续依据",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团 V3 全景架构图",
+          "url": "https://p0.meituan.net/meituantechblog/b6b35b2776b3eeddc82e1c211ee3bd792215253.png"
+        }
+      ]
+    },
+    {
+      "id": "F61",
+      "category": "证据与可信执行",
+      "title": "经验审计与决策复核",
+      "section": "G1",
+      "criterion": "不能用仅有好指标但解释不明的结论生成硬约束",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团 V3 全景架构图",
+          "url": "https://p0.meituan.net/meituantechblog/b6b35b2776b3eeddc82e1c211ee3bd792215253.png"
+        }
+      ]
+    },
+    {
+      "id": "F62",
+      "category": "Skill 自进化",
+      "title": "自动提炼工具经验和故障处理草稿",
+      "section": "M5.3",
+      "criterion": "重复处理同类问题可形成待审草稿",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5.3：Skill 草稿",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-3-%E4%BA%8C%E7%BA%A7%E4%BA%BA%E6%9C%BA%E6%A0%A1%E9%AA%8C-skill-%E8%8D%89%E7%A8%BF%E6%9C%BA%E5%88%B6"
+        }
+      ]
+    },
+    {
+      "id": "F63",
+      "category": "Skill 自进化",
+      "title": "系统初筛",
+      "section": "M5.3 / G1",
+      "criterion": "格式合格但没有真实证据的草稿仍无法提交晋升",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5.3：Skill 草稿",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-3-%E4%BA%8C%E7%BA%A7%E4%BA%BA%E6%9C%BA%E6%A0%A1%E9%AA%8C-skill-%E8%8D%89%E7%A8%BF%E6%9C%BA%E5%88%B6"
+        },
+        {
+          "title": "美团 V3 全景架构图",
+          "url": "https://p0.meituan.net/meituantechblog/b6b35b2776b3eeddc82e1c211ee3bd792215253.png"
+        }
+      ]
+    },
+    {
+      "id": "F64",
+      "category": "Skill 自进化",
+      "title": "人工审核后晋升正式工具集",
+      "section": "M5.3",
+      "criterion": "未批准时不可加载；批准后才成为可用 Skill",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5.3：Skill 草稿",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-3-%E4%BA%8C%E7%BA%A7%E4%BA%BA%E6%9C%BA%E6%A0%A1%E9%AA%8C-skill-%E8%8D%89%E7%A8%BF%E6%9C%BA%E5%88%B6"
+        }
+      ]
+    },
+    {
+      "id": "F65",
+      "category": "Skill 自进化",
+      "title": "正式 Skill 继续完善并再次审核",
+      "section": "M5.3",
+      "criterion": "正式 Skill 被更新前旧版继续有效且能回滚",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5.3：Skill 草稿",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-3-%E4%BA%8C%E7%BA%A7%E4%BA%BA%E6%9C%BA%E6%A0%A1%E9%AA%8C-skill-%E8%8D%89%E7%A8%BF%E6%9C%BA%E5%88%B6"
+        }
+      ]
+    },
+    {
+      "id": "F66",
+      "category": "Skill 自进化",
+      "title": "未经外部验证的经验留在临时区",
+      "section": "M5.3",
+      "criterion": "仅凭 Agent 总结无法写入正式知识和硬约束",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §5.3：Skill 草稿",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-3-%E4%BA%8C%E7%BA%A7%E4%BA%BA%E6%9C%BA%E6%A0%A1%E9%AA%8C-skill-%E8%8D%89%E7%A8%BF%E6%9C%BA%E5%88%B6"
+        }
+      ]
+    },
+    {
+      "id": "F67",
+      "category": "Skill 自进化",
+      "title": "跨项目迁移前适用性审查",
+      "section": "M8.4",
+      "criterion": "项目 A 局部经验不会无审核影响项目 B",
+      "status": "excluded",
+      "sources": [
+        {
+          "title": "美团原文 §8.4：适用边界",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_8-4-%E9%80%82%E7%94%A8%E8%BE%B9%E7%95%8C%E4%B8%8E%E8%AF%9A%E5%AE%9E%E7%9A%84%E5%B1%80%E9%99%90"
+        }
+      ]
+    },
+    {
+      "id": "F68",
+      "category": "离线与线上验证",
+      "title": "离线指标验收",
+      "section": "M8.3",
+      "criterion": "真实离线指标达标才允许进入线上验证",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §8.3：三层验证",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_8-3-%E4%B8%89%E5%B1%82%E9%AA%8C%E8%AF%81-%E8%87%AA%E4%B8%BB%E6%96%B9%E6%A1%88%E4%B8%8A%E7%BA%BF%E5%92%8C%E5%8F%8D%E5%93%BA%E7%BB%8F%E9%AA%8C"
+        }
+      ]
+    },
+    {
+      "id": "F69",
+      "category": "离线与线上验证",
+      "title": "线上 A/B 实验",
+      "section": "M4.3 / M8.3",
+      "criterion": "真实分流和真实业务数据能产生可追溯实验结果",
+      "status": "excluded",
+      "sources": [
+        {
+          "title": "美团原文 §4.3：真实大闭环",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_4-3-%E7%9C%9F%E5%AE%9E%E5%A4%A7%E9%97%AD%E7%8E%AF-%E8%87%AA%E8%BF%9B%E5%8C%96%E9%A3%9E%E8%BD%AE%E7%9A%84%E7%87%83%E6%96%99"
+        },
+        {
+          "title": "美团原文 §8.3：三层验证",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_8-3-%E4%B8%89%E5%B1%82%E9%AA%8C%E8%AF%81-%E8%87%AA%E4%B8%BB%E6%96%B9%E6%A1%88%E4%B8%8A%E7%BA%BF%E5%92%8C%E5%8F%8D%E5%93%BA%E7%BB%8F%E9%AA%8C"
+        }
+      ]
+    },
+    {
+      "id": "F70",
+      "category": "离线与线上验证",
+      "title": "依据置信区间决定推全",
+      "section": "M8.3",
+      "criterion": "区间未达到协议条件时不能给出推全通过结论",
+      "status": "excluded",
+      "sources": [
+        {
+          "title": "美团原文 §8.3：三层验证",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_8-3-%E4%B8%89%E5%B1%82%E9%AA%8C%E8%AF%81-%E8%87%AA%E4%B8%BB%E6%96%B9%E6%A1%88%E4%B8%8A%E7%BA%BF%E5%92%8C%E5%8F%8D%E5%93%BA%E7%BB%8F%E9%AA%8C"
+        }
+      ]
+    },
+    {
+      "id": "F71",
+      "category": "离线与线上验证",
+      "title": "线上结论和指标变化回流知识库",
+      "section": "M4.3 / G2",
+      "criterion": "能查到离线提升却线上无收益的反例并影响后续方向",
+      "status": "excluded",
+      "sources": [
+        {
+          "title": "美团原文 §4.3：真实大闭环",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_4-3-%E7%9C%9F%E5%AE%9E%E5%A4%A7%E9%97%AD%E7%8E%AF-%E8%87%AA%E8%BF%9B%E5%8C%96%E9%A3%9E%E8%BD%AE%E7%9A%84%E7%87%83%E6%96%99"
+        },
+        {
+          "title": "美团主 Agent 与记忆图",
+          "url": "https://p0.meituan.net/meituantechblog/9a7bc37921bcf1ac733d8a21d6484d062463066.png"
+        }
+      ]
+    },
+    {
+      "id": "F72",
+      "category": "离线与线上验证",
+      "title": "逻辑／可解释性复核",
+      "section": "M8.3",
+      "criterion": "可上线但解释不足的候选，经验仍停留在待审区",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §8.3：三层验证",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_8-3-%E4%B8%89%E5%B1%82%E9%AA%8C%E8%AF%81-%E8%87%AA%E4%B8%BB%E6%96%B9%E6%A1%88%E4%B8%8A%E7%BA%BF%E5%92%8C%E5%8F%8D%E5%93%BA%E7%BB%8F%E9%AA%8C"
+        }
+      ]
+    },
+    {
+      "id": "F73",
+      "category": "离线与线上验证",
+      "title": "无法判定是否入库时转人工",
+      "section": "M8.3",
+      "criterion": "疑难结论不会被自动归入真或假",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §8.3：三层验证",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_8-3-%E4%B8%89%E5%B1%82%E9%AA%8C%E8%AF%81-%E8%87%AA%E4%B8%BB%E6%96%B9%E6%A1%88%E4%B8%8A%E7%BA%BF%E5%92%8C%E5%8F%8D%E5%93%BA%E7%BB%8F%E9%AA%8C"
+        }
+      ]
+    },
+    {
+      "id": "F74",
+      "category": "离线与线上验证",
+      "title": "上线／推全结果与候选版本关联",
+      "section": "M8.3 → D2",
+      "criterion": "能够追溯线上某版本对应哪次离线实验",
+      "status": "excluded",
+      "sources": [
+        {
+          "title": "美团原文 §8.3：三层验证",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_8-3-%E4%B8%89%E5%B1%82%E9%AA%8C%E8%AF%81-%E8%87%AA%E4%B8%BB%E6%96%B9%E6%A1%88%E4%B8%8A%E7%BA%BF%E5%92%8C%E5%8F%8D%E5%93%BA%E7%BB%8F%E9%AA%8C"
+        }
+      ]
+    },
+    {
+      "id": "F75",
+      "category": "解耦与审计",
+      "title": "底层 Agent／模型可替换",
+      "section": "M2 / M6",
+      "criterion": "更换 worker 后读取同一 JSON、证据和 Skill 版本继续运行",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §2：设计理念",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_2-%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5-%E6%88%91%E4%BB%AC%E6%83%B3%E9%80%A0%E4%B8%80%E4%B8%AA%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E7%B3%BB%E7%BB%9F"
+        },
+        {
+          "title": "美团原文 §6：基座与入口解耦",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_6-%E4%B8%8E-agent-%E5%9F%BA%E5%BA%A7%E8%A7%A3%E8%80%A6-%E4%BA%AB%E5%8F%97-agent-%E7%BA%A2%E5%88%A9"
+        }
+      ]
+    },
+    {
+      "id": "F76",
+      "category": "解耦与审计",
+      "title": "LLM/Harness/Skills/Memory/Tools 分层",
+      "section": "G1 / G2",
+      "criterion": "可以单独替换检索器或模型而不改研究控制规则",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团 V3 全景架构图",
+          "url": "https://p0.meituan.net/meituantechblog/b6b35b2776b3eeddc82e1c211ee3bd792215253.png"
+        },
+        {
+          "title": "美团主 Agent 与记忆图",
+          "url": "https://p0.meituan.net/meituantechblog/9a7bc37921bcf1ac733d8a21d6484d062463066.png"
+        }
+      ]
+    },
+    {
+      "id": "F77",
+      "category": "解耦与审计",
+      "title": "可复现、可审计、可回滚",
+      "section": "M9",
+      "criterion": "复跑能说明随机性和差异，不以再次调用同一 LLM 代替复现",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §9：可复现与审计",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_9-%E7%BB%93%E8%AF%AD-%E4%BB%8E-karpathy-%E5%87%BA%E5%8F%91-%E8%B5%B0%E5%88%B0%E6%9B%B4%E8%BF%9C%E7%9A%84%E5%9C%B0%E6%96%B9"
+        }
+      ]
+    },
+    {
+      "id": "F78",
+      "category": "解耦与审计",
+      "title": "每个训练任务分别计入一次迭代",
+      "section": "M10",
+      "criterion": "一批三方向含一次确定代码失败仍消耗三次有效任务额度",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §10：计数口径",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_10-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E5%8F%8A%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"
+        }
+      ]
+    },
+    {
+      "id": "F79",
+      "category": "解耦与审计",
+      "title": "使用范围检查",
+      "section": "M8.4",
+      "criterion": "不满足条件的项目不会默认开启无人值守实验",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §8.4：适用边界",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_8-4-%E9%80%82%E7%94%A8%E8%BE%B9%E7%95%8C%E4%B8%8E%E8%AF%9A%E5%AE%9E%E7%9A%84%E5%B1%80%E9%99%90"
+        }
+      ]
+    },
+    {
+      "id": "F80",
+      "category": "解耦与审计",
+      "title": "知识和经验质量随使用回流改善",
+      "section": "M2 / M4.3 / M5.4",
+      "criterion": "能演示一次旧错误被正式约束阻止、一次已审 Skill 被复用",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团原文 §2：设计理念",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_2-%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5-%E6%88%91%E4%BB%AC%E6%83%B3%E9%80%A0%E4%B8%80%E4%B8%AA%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E7%B3%BB%E7%BB%9F"
+        },
+        {
+          "title": "美团原文 §4.3：真实大闭环",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_4-3-%E7%9C%9F%E5%AE%9E%E5%A4%A7%E9%97%AD%E7%8E%AF-%E8%87%AA%E8%BF%9B%E5%8C%96%E9%A3%9E%E8%BD%AE%E7%9A%84%E7%87%83%E6%96%99"
+        },
+        {
+          "title": "美团原文 §5.4：归因",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html#_5-4-%E5%BD%92%E5%9B%A0-%E8%87%AA%E8%BF%9B%E5%8C%96%E7%B3%BB%E7%BB%9F%E7%9A%84-%E6%85%A2%E5%8F%98%E9%87%8F"
+        }
+      ]
+    },
+    {
+      "id": "F81",
+      "category": "项目与交互",
+      "title": "每轮复核多目标关系与跨轮重规划",
+      "section": "G4",
+      "criterion": "多目标出现相反走势时，生成有证据的关系分析与下一轮计划，不只更新一个加权分数",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团 AutoResearch 与 AutoML 功能对比图",
+          "url": "https://p0.meituan.net/meituantechblog/86fd97bb468f56afe9507da13dbcdde2166522.png"
+        }
+      ]
+    },
+    {
+      "id": "F82",
+      "category": "V1 串行能力",
+      "title": "基线分支保护",
+      "section": "G3",
+      "criterion": "worker 无法直接覆盖基线分支，退化实验不改变已验收最优版本",
+      "status": "verified",
+      "sources": [
+        {
+          "title": "美团版本维度与状态机读写图",
+          "url": "https://p0.meituan.net/meituantechblog/f96c07e4011d02bd7812f31d56cd3f08844163.png"
+        }
+      ]
+    },
+    {
+      "id": "D01",
+      "category": "交付与运行边界",
+      "title": "本地交付包可从清洁环境安装并启动",
+      "section": "交付要求",
+      "criterion": "由独立执行角色用交付包和文档在清洁环境复现可用的本地研究入口。",
+      "status": "verified"
+    },
+    {
+      "id": "D02",
+      "category": "交付与运行边界",
+      "title": "接口、目录、验收记录可维护",
+      "section": "交付要求",
+      "criterion": "每个新增问题可追溯到验收项、改动版本和真实项目回执；明确保留源项目已有的强能力。",
+      "status": "verified"
+    },
+    {
+      "id": "D03",
+      "category": "交付与运行边界",
+      "title": "长时间有真实任务在途的无人值守",
+      "section": "§3.2 / §6 / §7",
+      "criterion": "恢复此项后，以持续真实任务、周期性唤起和异常恢复原件核验。",
+      "status": "deferred"
+    }
+  ]
+}

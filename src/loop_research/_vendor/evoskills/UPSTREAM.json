@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/EvoScientist/EvoSkills",
+  "commit": "85ad685d1df5ed1d7fe641564d04bb8a3dec8f28",
+  "files": [
+    "research-ideation.md",
+    "experiment-pipeline.md",
+    "evo-memory.md"
+  ],
+  "use": "Research method inputs; host loops and trust rules are overridden by the workflow protocol."
+}

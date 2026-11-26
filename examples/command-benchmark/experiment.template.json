@@ -1,0 +1,23 @@
+{
+  "name": "Sensor threshold benchmark",
+  "objective": "Improve validation accuracy of a numeric threshold classifier for synthetic sensor readings.",
+  "knowledge": "The labels are synthetic. Higher readings indicate class one. Threshold 7 is the measured starting policy. Train, validation and holdout IDs are fixed by the committed split manifest; compare candidates only on validation accuracy.",
+  "archive_uri": "local",
+  "metrics": [{"name": "accuracy", "direction": "max", "threshold": 1}],
+  "max_experiments": 3,
+  "branches": 1,
+  "reversible": true,
+  "affordable": true,
+  "confirmed_knowledge": true,
+  "independent_review": true,
+  "followup_experiments": true,
+  "command_experiment": {
+    "repository": ".",
+    "revision": "HEAD",
+    "command": ["python3.12", "evaluate.py"],
+    "split_manifest": "splits.json",
+    "baseline": {"threshold": 7},
+    "choices": {"threshold": [3, 5, 7]},
+    "timeout_seconds": 10
+  }
+}

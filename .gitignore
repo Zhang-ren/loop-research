@@ -1,0 +1,39 @@
+# Python and build outputs
+.venv*/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage*
+htmlcov/
+build/
+dist/
+*.whl
+
+# Research workspaces and local data
+runs/
+.loop-research/
+.mlflow/
+mlruns/
+data/
+datasets/
+checkpoints/
+artifacts/
+*.db
+*.sqlite*
+*.log
+*.ckpt
+*.pth
+*.pt
+*.safetensors
+results-unit.xml
+
+# Local configuration and credentials
+.env*
+.codex/
+credentials.json
+auth.json
+*.pem
+*.key
+.DS_Store

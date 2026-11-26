@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/EvoScientist/EvoScientist",
+  "commit": "04cb45557057b4b5e035426af4b5553296e2f2d2",
+  "files": [
+    "proposals.py",
+    "paths.py",
+    "LICENSE"
+  ],
+  "use": "Audit of a bounded proposal adapter; not imported as another Agent runtime.",
+  "adaptations": [
+    "relative paths import into isolated vendored package",
+    "replace Evo runtime skill-cache notification with no-op; workflow loads snapshots per invocation",
+    "Extract four unchanged skill metadata helpers and constants; redirect two lazy imports to remove runtime dependencies"
+  ],
+  "sha256": {
+    "proposals.py": "ae7865fc76dc34099f71f17c2fb1c2a90864b49bd9bd4348195a3506a09a762c",
+    "paths.py": "c81b95793030767b548581d774372028e1540ed1e8690505ec9f2f68b5f1f538",
+    "skill_metadata.py": "7e2f19b5d2a8ad5fb1f48971b79082523e5cc7354ef02ead159fbcb4509a429e",
+    "LICENSE": "eae7b5b1f14c471f27d7f3d8cc5d26b154966910b761241fab8ad11fc6f637a5"
+  }
+}

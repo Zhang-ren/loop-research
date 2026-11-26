@@ -1,0 +1,48 @@
+[project]
+name = "loop-research"
+version = "0.1.0"
+description = "Evidence-driven research workflow with Codex CLI workers"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "pydantic>=2.10,<3",
+  "langgraph>=1,<2",
+  "filelock>=3.16,<4",
+  "apscheduler>=3.11,<4",
+  "mlflow-skinny>=3,<4",
+  "sqlalchemy>=2,<3",
+  "alembic>=1.14,<2",
+  "scikit-learn>=1.6,<2",
+  "scipy>=1.14,<2",
+  "typer>=0.15,<1",
+  "httpx>=0.28,<1",
+  "beautifulsoup4>=4.12,<5",
+  "psutil>=7.2.2",
+  "pyyaml>=6,<7",
+  "pyalex>=0.21,<1",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "ruff>=0.11"]
+
+[project.scripts]
+loop-research = "loop_research.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+
+
+[tool.uv]
+# Keep wheels compatible with the validated Linux Python 3.12 runtime.
+constraint-dependencies = [
+  "numpy==1.26.4; sys_platform == 'linux' and python_version == '3.12'",
+  "scipy==1.14.1; sys_platform == 'linux' and python_version == '3.12'",
+  "scikit-learn==1.6.1; sys_platform == 'linux' and python_version == '3.12'",
+]

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LOOP Research 的本地研发工作流、实验接入、迁移与使用手册">
+  <title>LOOP Research · 项目与使用手册</title>
+  <style>
+    :root { color-scheme: light; --ink: #18312e; --muted: #49635e; --line: #ced9d1; --paper: #f7f9f4; --wash: #e9f1e7; --green: #175e48; --dark: #142e2a; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.72 system-ui, "PingFang SC", "Microsoft YaHei", sans-serif; }
+    a { color: var(--green); text-decoration-thickness: .08em; text-underline-offset: .2em; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid #a65b2e; outline-offset: 4px; }
+    h1, h2, h3, p { margin-block: 0 .8rem; }
+    h1 { font-size: clamp(2.55rem, 7vw, 5.65rem); line-height: .99; letter-spacing: -.065em; }
+    h2 { font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.25; margin-bottom: 1rem; }
+    h3 { font-size: 1.06rem; }
+    p, li { text-wrap: pretty; }
+    code { font: .89em/1.55 ui-monospace, SFMono-Regular, Consolas, monospace; overflow-wrap: anywhere; }
+    :not(pre) > code { background: var(--wash); padding: .12em .32em; border-radius: .22em; }
+    pre { color: #e9f4e8; background: var(--dark); border-radius: .45rem; margin: .75rem 0 1.2rem; padding: 1rem 1.25rem; overflow-x: auto; line-height: 1.5; }
+    pre code { overflow-wrap: normal; }
+    .wrap { width: min(74rem, calc(100% - 2.5rem)); margin-inline: auto; }
+    .mast { position: sticky; z-index: 1; top: 0; background: var(--paper); border-bottom: 1px solid var(--line); }
+    .mast .wrap, nav { display: flex; gap: .4rem 1.35rem; align-items: center; flex-wrap: wrap; }
+    .mast .wrap { min-height: 3.8rem; justify-content: space-between; padding-block: .55rem; }
+    .brand { font-weight: 800; color: var(--ink); text-decoration: none; }
+    nav { font-size: .91rem; }
+    .hero { border-bottom: 1px solid var(--line); background: var(--wash); padding: clamp(2.8rem, 9vw, 6.2rem) 0; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(14.5rem, 1fr); align-items: end; gap: 2rem; }
+    .edition { color: var(--green); font-weight: 700; letter-spacing: .065em; font-size: .88rem; }
+    .lead { max-width: 38rem; color: var(--muted); font-size: clamp(1rem, 2vw, 1.2rem); margin: 1.1rem 0 1.4rem; }
+    .jump { display: inline-block; text-decoration: none; background: var(--green); color: white; padding: .48rem .85rem; border-radius: .32rem; font-weight: 650; }
+    .status { padding: 1rem 0 .2rem 1.3rem; margin: 0; border-left: 2px solid var(--green); }
+    .status div { display: grid; grid-template-columns: 3.25rem 1fr; align-items: center; margin-bottom: .4rem; }
+    .status dt { font-size: 1.5rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+    .status dd { margin: 0; color: var(--muted); font-size: .9rem; }
+    section { padding: 2.3rem 0 2.6rem; border-bottom: 1px solid var(--line); }
+    .grid { display: grid; gap: 1rem 1.35rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid article { border-top: 2px solid var(--green); padding-top: .7rem; }
+    .grid article p, .muted { color: var(--muted); }
+    .path { list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .5rem; padding: 0; margin: .7rem 0 1.3rem; }
+    .path li { padding: .55rem .8rem; border: 1px solid var(--line); background: var(--wash); border-radius: .33rem; font-weight: 650; }
+    .table { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid var(--line); padding: .6rem .65rem .6rem 0; text-align: left; vertical-align: top; }
+    th { color: var(--green); }
+    td:first-child { min-width: 8rem; }
+    details { border-block-start: 1px solid var(--line); padding: .75rem 0 .25rem; }
+    details > summary { color: var(--green); font-weight: 650; cursor: pointer; margin-bottom: .55rem; }
+    footer { padding: 1.25rem 0 2.4rem; }
+    @media (max-width: 740px) {
+      .hero-grid, .grid { grid-template-columns: 1fr; }
+      .path { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 460px) {
+      .mast { position: static; }
+      html { scroll-padding-top: 1rem; }
+      .wrap { width: calc(100% - 1.6rem); }
+      pre { padding: .8rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print {
+      .mast, .jump { display: none; }
+      .hero { padding: 1rem 0; }
+      pre { color: #111; background: #f2f2f2; white-space: pre-wrap; }
+      section { padding: 1rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="mast">
+    <div class="wrap">
+      <a class="brand" href="#top">LOOP Research</a>
+      <nav aria-label="手册目录">
+        <a href="#architecture">架构</a>
+        <a href="#start">快速开始</a>
+        <a href="#intake">接入实验</a>
+        <a href="#operate">运行与恢复</a>
+        <a href="#delivery">迁移与发布</a>
+        <a href="#sources">技术来源</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="edition">本地科研工作流 · 0.1.0</p>
+          <h1>LOOP<br>Research</h1>
+          <p class="lead">把已有实验接进可恢复的研究循环。从冻结基线开始，并行探索候选，独立复核后用保留测试集验收。</p>
+          <a class="jump" href="#start">运行第一个示例</a>
+        </div>
+        <dl class="status">
+          <div><dt>76</dt><dd>本地功能和交付项已验收</dd></div>
+          <div><dt>8</dt><dd>线上与云端等能力在范围外</dd></div>
+          <div><dt>1</dt><dd>长时间真实任务无人值守暂缓</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="wrap">
+      <section id="architecture" aria-labelledby="h-architecture">
+        <h2 id="h-architecture">工作流与 Codex 的关系</h2>
+        <p>入口可用 CLI 或 Codex 的 <code>$research-loop</code> Skill。入口提交任务后，Python 控制器保管实验状态和证据，按阶段启动独立的 Codex 角色。各角色通过 JSON Schema 返回结构化结果，训练和打分由接入的实验执行器运行。</p>
+        <ol class="path" aria-label="研究主流程">
+          <li>确认需求与基线</li><li>提出差异化假设</li><li>并行训练与评测</li><li>复核与收敛</li><li>冻结测试与归档</li>
+        </ol>
+        <p>当验证指标停滞且还有预算时，控制器可以补充调研、调整方向、试探参数边界或组合已经测过的改进后重训。实际支持的动作取决于适配器和冻结协议。达标或预算耗尽后进入验收与归档。</p>
+        <div class="grid">
+          <article><h3>控制器</h3><p>LangGraph 表达工作阶段与条件路由。文件存储维护状态、租约、证据摘要和可重复触发的回执。</p></article>
+          <article><h3>执行与核验</h3><p>Codex 规划、编码、分析和复核从独立会话启动。候选工作区隔离，按冻结协议执行并保存真实测量。</p></article>
+          <article><h3>项目经验</h3><p>研究级项目 ID 限制经验检索。正式发布需要原件证据、独立复核及用户批准具体版本。</p></article>
+        </div>
+        <p><a href="architecture.md">状态机、源码结构与评测边界</a> · <a href="acceptance.md">真实项目案例</a> · <a href="acceptance.json">85 条功能及交付条目</a></p>
+      </section>
+
+      <section id="start" aria-labelledby="h-start">
+        <h2 id="h-start">安装与首次运行</h2>
+        <p>在 Linux x86_64、Python 3.12 上完成了迁移实测。安装 Git、uv 和 Codex CLI，使用现有 Codex 登录。隔离训练模式还需要主机允许 bubblewrap 建立所需命名空间。</p>
+        <pre><code>uv sync --locked --no-editable
+codex --version
+codex login status</code></pre>
+        <p>如需登录，运行 <code>codex login</code>。如果 CLI 路径未被自动发现，可设置 <code>LOOP_CODEX_BINARY</code>。</p>
+        <pre><code>uv run --no-sync loop-research preflight examples/breast-cancer.json
+uv run --no-sync loop-research init examples/breast-cancer.json runs/classifier
+uv run --no-sync loop-research status runs/classifier</code></pre>
+        <p><code>init</code> 测量基线。下一条命令才开始模型规划和候选搜索，消耗 Codex 账户额度。模型可能选择不同的可验证假设。使用相同的代码、数据、参数与种子复跑某次测量。</p>
+        <pre><code>uv run --no-sync loop-research run runs/classifier
+uv run --no-sync loop-research budget runs/classifier
+uv run --no-sync loop-research report runs/classifier
+uv run --no-sync pytest -q</code></pre>
+        <details>
+          <summary>尝试用户自带脚本的合成传感器示例</summary>
+          <p>复制示例到独立目录并提交输入。实验脚本只需要 Python 标准库。</p>
+          <pre><code>EXAMPLE_ROOT="$(mktemp -d)"
+cp -R examples/command-benchmark/. "$EXAMPLE_ROOT/"
+git -C "$EXAMPLE_ROOT" init
+git -C "$EXAMPLE_ROOT" add .
+git -C "$EXAMPLE_ROOT" commit -m "Freeze synthetic benchmark"
+uv run --no-sync loop-research init \
+  "$EXAMPLE_ROOT/experiment.template.json" runs/sensor
+uv run --no-sync loop-research run runs/sensor</code></pre>
+          <p>Git 提交需要本机已配置提交身份。模板和脚本也可从仓库的 <code>examples/command-benchmark</code> 目录查看。</p>
+        </details>
+        <p><a href="https://docs.astral.sh/uv/getting-started/installation/">安装 uv</a> · <a href="https://learn.chatgpt.com/docs/codex/cli">安装 Codex CLI</a></p>
+      </section>
+
+      <section id="intake" aria-labelledby="h-intake">
+        <h2 id="h-intake">接入已有实验仓库</h2>
+        <p>在 Codex 中用 <code>$research-loop</code> 指定项目目录、目标和研究预算，也可以手动调用 CLI。准备阶段检查环境和数据并给出补问，用户确认协议后再启动真实基线。</p>
+        <pre><code>uv run --no-sync loop-research prepare-study /path/to/project runs/my-study \
+  --objective "提高现有验证集的宏 F1" --non-interactive</code></pre>
+        <p>优先复用项目的 <code>experiment.json</code>。如果返回 <code>issues</code>，可以补齐数据或依赖，或用 <code>--answers /path/to/answers.json</code> 为同一个运行目录补充答案。确认生成的说明、命令、切分和可修改范围后，加 <code>--start</code> 启动。仅测基线时使用 <code>init RUN/study-spec.json RUN</code>。</p>
+        <div class="table">
+          <table>
+            <thead><tr><th scope="col">入口</th><th scope="col">需要提供的信息</th></tr></thead>
+            <tbody>
+              <tr><td><code>prepare-study</code></td><td>Git 提交、训练或评测命令、数据和固定划分、指标方向与阈值、预算及允许的参数。可声明实验解释器、依赖程序或 GPU。</td></tr>
+              <tr><td><code>study SPEC RUN</code></td><td>现有的完整配置。初始化后同一研究继续使用相同配置和运行目录。</td></tr>
+              <tr><td><code>onboard PROJECT RUN</code></td><td>可运行的本地原生 Python 仓库与目标。按需提供 Python 解释器、预处理产物和必须的数据文件。</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <details>
+          <summary>Linux 原生仓库从发现推进到候选搜索</summary>
+          <pre><code>uv run --no-sync loop-research onboard /path/to/project runs/native \
+  --objective "保持原生评分，改善开发验证指标" \
+  --execute --interpreter /path/to/experiment/python \
+  --research --rounds 2 --candidates 6</code></pre>
+          <p>只做发现时省略执行与搜索选项。存在预处理缓存时可通过 <code>--artifacts</code> 提供。候选启动前要求通过原生基线一致性、数据划分和评分器资格检查。失败时重跑同一入口并查看该目录的 <code>status</code>。如果已经进入候选周期，研究账本在运行目录的 <code>study/</code> 下。</p>
+        </details>
+        <details>
+          <summary>自定义脚本接口与可修改边界</summary>
+          <p>命令适配用 <code>LOOP_PARAMETERS</code>、<code>LOOP_SPLIT_MANIFEST</code>、<code>LOOP_SPLIT</code> 和 <code>LOOP_SEED</code> 传入参数、划分和种子。评测脚本向 <code>LOOP_METRICS</code> 写出指标 JSON。普通命令模式面向受信脚本。隔离预测、逐折和原生模式另行分开训练输入、预测及评分。配合提交冻结文件和声明只读数据限制可变范围。<a href="../.agents/skills/research-loop/references/local-project.md">查看仓库中的接入文档</a></p>
+        </details>
+      </section>
+
+      <section id="operate" aria-labelledby="h-operate">
+        <h2 id="h-operate">监控、复核与恢复</h2>
+        <div class="table">
+          <table>
+            <thead><tr><th scope="col">任务</th><th scope="col">CLI 命令</th></tr></thead>
+            <tbody>
+              <tr><td>查看运行</td><td><code>status RUN</code>、<code>budget RUN</code>、<code>report RUN</code>。训练预算与角色调用分别统计。</td></tr>
+              <tr><td>手动或定时推进</td><td><code>tick RUN</code>、<code>run RUN</code>、<code>serve RUN --interval-seconds 60</code>。外部事件传 <code>--event-id</code>，重投使用相同 ID。</td></tr>
+              <tr><td>停止与对账</td><td><code>stop RUN</code>，可加 <code>--cancel-training</code>。用 <code>reconcile RUN</code> 查训练回执。</td></tr>
+              <tr><td>独立复核</td><td><code>recheck-review RUN REVIEW_ID</code>，或用 <code>resolve-review RUN REVIEW_ID REVIEWER RATIONALE</code> 留档决定。用 <code>--accept</code> 明确接受。</td></tr>
+              <tr><td>复跑或兼容恢复</td><td><code>reproduce RUN EVIDENCE_ID</code> 重跑已记录的测量。<code>resume RUN --python /path/to/python</code> 使用归档控制器恢复。</td></tr>
+              <tr><td>调整评价协议</td><td><code>revise-metrics</code> 或 <code>revise-study</code> 在新目录实测基线，保留与旧口径的关联。</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>从 <code>RUN/state.json</code> 看当前状态。<code>jobs/</code> 和 <code>evidence/</code> 保存训练与测量回执，<code>workers/</code> 保存角色输入输出，<code>memory/</code> 保存项目经验的草案和批准记录。对外分享前应按项目的数据授权处理这些文件。</p>
+        <details>
+          <summary>人工审核、批准和回滚 Skill</summary>
+          <pre><code>loop-research memory-list RUN
+loop-research screen-memory RUN HASH
+loop-research review-memory RUN HASH
+loop-research approve-memory RUN HASH REVIEWER HASH "批准理由"
+loop-research search-memory RUN "检索关键词"
+loop-research revise-memory RUN HASH "修订原因"
+loop-research rollback-memory RUN OLD_HASH REVIEWER "回滚理由"</code></pre>
+          <p>更新草案需要单独批准。回滚恢复此前已批准的版本。入口 Skill 面向通用接入，研究总结产生的 Skill 则随原研究目录管理。</p>
+        </details>
+        <details>
+          <summary>从公开选题生成论文草稿</summary>
+          <p>试点脚本检索公开论文，固定上游版本，复跑示例，并将审查通过的候选结果写入论文草稿。以下手写数字试点需要实验解释器可导入 scikit-learn 和 Matplotlib，并能访问所需公开资源。重用同一运行目录可读取已完成阶段的回执。</p>
+          <pre><code>uv run --no-sync python scripts/run_public_paper_study.py runs/digits-paper \
+  --interpreter /path/to/experiment/python \
+  --brief "复现公开的手写数字分类基线，比较三项单变量改动"</code></pre>
+        </details>
+      </section>
+
+      <section id="delivery" aria-labelledby="h-delivery">
+        <h2 id="h-delivery">迁移与 GitHub 发布</h2>
+        <p>新主机从源码和 <code>uv.lock</code> 重建环境，再重新登录 Codex 并配置实验自己的解释器与数据。已有研究的部分回执包含绝对路径，恢复时要重建原布局并验证归档。无法恢复原布局时，可在新目录重测基线。</p>
+        <p>发布仓库包含源代码、配置模板、合成数据、回归测试和第三方声明。原实验运行目录、模型权重、账户凭据和虚拟环境单独保存。</p>
+        <pre><code>git status --short
+git add --all
+git diff --cached --stat
+git commit -m "Initial release of LOOP Research"
+git remote add origin https://github.com/YOUR_ACCOUNT/YOUR_REPOSITORY.git
+git push -u origin main</code></pre>
+        <p>从 ZIP 解压时先运行 <code>git init -b main</code>。公开源码前，由维护者决定是否为自有部分添加开源许可证。随包第三方文件附有各自的许可证和来源记录。</p>
+        <p><a href="migration.md">完整迁移和发布说明</a> · <a href="../THIRD_PARTY_NOTICES.md">第三方许可声明</a></p>
+      </section>
+
+      <section id="sources" aria-labelledby="h-sources">
+        <h2 id="h-sources">技术来源与验收范围</h2>
+        <p>领域设计依据美团公开的 V1–V3 架构和 Karpathy AutoResearch。控制层采用 LangGraph、APScheduler 和本地文件账本，实验用 MLflow 记录。EvoScientist 提供随包的经验提案校验与发布模块，EvoSkills 提供研究方法和论文取用工具。PyAlex 接入 OpenAlex，DVC 与 Snakemake 为接入设计参考。</p>
+        <p>真实项目案例包括公开手写数字、MAPIE、Optuna、PyTorch 词级语言模型和 TabZilla。发布版本另含可独立运行的合成传感器例子。线上与云端能力属于范围外，长时间真实任务在途无人值守验收暂缓。</p>
+        <p><a href="references.md">完整技术来源、固定提交和依赖</a> · <a href="acceptance.md">验收案例与范围</a> · <a href="https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html">美团架构原文</a></p>
+      </section>
+    </div>
+  </main>
+  <footer class="wrap">
+    <a href="#top">返回顶部</a> · <a href="../README.md">仓库 README</a>
+  </footer>
+</body>
+</html>

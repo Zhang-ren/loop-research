@@ -1,0 +1,21 @@
+{
+  "name": "small-classification-research",
+  "objective": "Improve validation accuracy and ROC AUC over the measured logistic-regression baseline while preserving the frozen evaluation protocol.",
+  "knowledge": "This is a reversible software benchmark on scikit-learn's bundled breast_cancer dataset. It evaluates the research workflow, not clinical suitability. Feature scales differ greatly. Start from logistic regression without scaling. Separate model training from the fixed evaluation implementation. Search uses the validation split; the final test split is reserved. Candidate directions must be distinct and each must vary one experimental axis.",
+  "archive_uri": "file:report.md",
+  "metrics": [
+    {"name": "accuracy", "direction": "max", "threshold": 0.97},
+    {"name": "roc_auc", "direction": "max", "threshold": 0.99}
+  ],
+  "max_experiments": 6,
+  "branches": 3,
+  "concurrency": 3,
+  "seed": 42,
+  "stagnation_batches": 1,
+  "infrastructure_retries": 2,
+  "worker_timeout_seconds": 240,
+  "task_lease_seconds": 1800,
+  "reversible": true,
+  "affordable": true,
+  "confirmed_knowledge": true
+}
